@@ -32,11 +32,16 @@
   a corresponding number Y such that X + Y = targetSum. With two variables in this equation known to you, 
   it shouldn't be hard to solve for Y.
 
+  -- Hint 3 (for third solution)
+Try storing every number in a hash table, solving the equation mentioned in Hint #2 for every number, 
+and checking if the Y that you find is stored in the hash table. 
+What are the time and space implications of this approach?
+
 /* ------------------------ Solutions ------------------------*/
 
 //  ---- First solution ---- :
 
-function twoNumberSum(array, targetSum) {
+function FirstTwoNumberSum(array, targetSum) {
   for (let i = 0; i < array.length; i++) {
     for (let x = i; x < array.length; x++) {
       if (array[i] + array[x] === targetSum && x != i) {
@@ -49,7 +54,7 @@ function twoNumberSum(array, targetSum) {
 
 //  ---- Second solution ---- :
 
-function twoNumberSum2(array, targetSum) {
+function SecondTwoNumberSum(array, targetSum) {
   const obj = {};
   for (const value of array) {
     const target = targetSum - value;
@@ -59,6 +64,24 @@ function twoNumberSum2(array, targetSum) {
     } else {
       obj[value] = value;
     }
+  }
+  return [];
+}
+
+//  ---- Third solution ---- :
+
+function ThirdTwoNumberSum(array, targetSum) {
+  array.sort((first, second) => first - second);
+  let right = array.length - 1;
+  let left = 0;
+  while (left < right) {
+    const currentValue = array[left] + array[right];
+    if (currentValue === targetSum) return [array[left], array[right]];
+    if (currentValue < targetSum) {
+      left++;
+      continue;
+    }
+    right--;
   }
   return [];
 }
