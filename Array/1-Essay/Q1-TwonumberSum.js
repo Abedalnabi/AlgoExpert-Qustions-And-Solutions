@@ -1,4 +1,4 @@
-/* ------------------------ Question ------------------------
+/* ------------------------ Question-1-Array-Essay ------------------------
 
   Write a function that takes in a non-empty array of distinct integers and an
   integer representing a target sum. If any two numbers in the input array sum
@@ -33,9 +33,9 @@
   it shouldn't be hard to solve for Y.
 
   -- Hint 3 (for third solution)
-Try storing every number in a hash table, solving the equation mentioned in Hint #2 for every number, 
-and checking if the Y that you find is stored in the hash table. 
-What are the time and space implications of this approach?
+  Try storing every number in a hash table, solving the equation mentioned in Hint #2 for every number, 
+  and checking if the Y that you find is stored in the hash table. 
+  What are the time and space implications of this approach?
 
 /* ------------------------ Solutions ------------------------*/
 

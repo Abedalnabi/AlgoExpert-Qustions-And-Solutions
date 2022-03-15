@@ -1,4 +1,4 @@
-/* ------------------------ Question ------------------------
+/* ------------------------ Question-2-Array-Essay ------------------------
 
   Given two non-empty arrays of integers, write a function that determines
   whether the second array is a subsequence of the first one.
@@ -22,39 +22,43 @@
 */
 /* ------------------------ Hints ------------------------
 
-  -- Hint 1 (for first solution)
+  -- Hint 1 
+  You can solve this question by iterating through the main input array once.
 
+  -- Hint 2 
+  If you find that integer, keep on iterating through the main array, but now look 
+  Iterate through the main array, and look for the first integer in the potential subsequence.
+  Continue this process until you either find every integer in the potential subsequence 
+  for the second integer in the potential subsequence. or you reach the end of the main array.
 
-  -- Hint 2 (for second solution)
-
-
-  -- Hint 3 (for third solution)
-
+  -- Hint 3 
+  To actually implement what Hint #2 describes, you'll have to declare a variable holding your position
+  in the potential subsequence.
+  At first, this position will be the 0th index in the sequence; as you find the sequence's integers in the main 
+  array, you'll increment the position variable until you reach the end of the sequence.
 
 /* ------------------------ Solutions ------------------------*/
 
 //  ---- First solution ---- :
 
 function FirstIsValidSubsequence(array, sequence) {
-  let sequenceInd = 0;
-  for (const value of array) {
-    if (sequenceInd === sequence.length) break;
-    if (sequence[sequenceInd] === value) sequenceInd++;
+  let arrayIndex = 0;
+  let sequenceIndex = 0;
+  while (array.length > arrayIndex && sequence.length > sequenceIndex) {
+    if (array[arrayIndex] === sequence[sequenceIndex]) sequenceIndex++;
+    arrayIndex++;
   }
-  return sequenceInd === sequence.length;
+  return sequenceIndex === sequence.length;
 }
-
-console.log(isValidSubsequence([5, 1, 22, 25, 6, -1, 8, 10], [1, 6, 10]));
 
 //  ---- Second solution ---- :
 
-function SecoundIsValidSubsequence(array, sequence) {
-  let seqIdx = 0;
+function SecondIsValidSubsequence(array, sequence) {
+  let seqIndex = 0;
   for (const value of array) {
     if (seqIdx === sequence.length) break;
-    if (sequence[seqIdx] === value) seqIdx++;
+    if (sequence[seqIndex] === value) seqIndex++;
   }
-  return seqIdx === sequence.length;
-}
 
-//  ---- Third solution ---- :
+  return seqIndex === sequence.length;
+}
