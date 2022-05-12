@@ -1,4 +1,4 @@
-/* ------------------------ Question-5-Array-Essay ------------------------
+/* ------------------------ Question-5-String-Essay ------------------------
 
 
   Write a function that takes in a non-empty string and that returns a boolean
