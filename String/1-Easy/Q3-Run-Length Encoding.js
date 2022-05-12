@@ -58,5 +58,3 @@ function runLengthEncoding(string) {
   result.push(counter, string[string.length - 1]);
   return result.join("");
 }
-
-runLengthEncoding("aaaabbbbccccd");
