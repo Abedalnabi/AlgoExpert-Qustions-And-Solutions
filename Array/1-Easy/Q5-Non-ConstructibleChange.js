@@ -40,10 +40,3 @@ function nonConstructibleChange(coins) {
   }
   return currentChangeCreated + 1;
 }
-
-//  ---- Second solution ---- :
-
-function nonConstructibleChange2(coins) {
-  // Write your code here.
-  return 1;
-}
