@@ -54,7 +54,7 @@ function firstFirstNonRepeatingCharacter(string) {
   }
   return -1;
 }
-console.log(firstFirstNonRepeatingCharacter("abcdaa"));
+
 //  ---- Second solution ---- :
 function secondFirstNonRepeatingCharacter(string) {
   const charactersCount = {};
