@@ -50,6 +50,7 @@ function FirstSortedSquaredArray(array) {
 }
 
 //  ---- Second solution ---- :
+
 function SecondSortedSquaredArray(array) {
   const sortedArray = [];
   let smallestIdx = 0;
