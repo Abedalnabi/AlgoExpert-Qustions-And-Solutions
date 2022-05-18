@@ -47,10 +47,10 @@ including sub-elements, and d is the greatest depth of "special" arrays in the a
 /* ------------------------ Solutions ------------------------*/
 
 //  ---- First solution ---- :
-// array = [5, 2, [7, -1], 3, [6, 5, 4]]
-// ===> 12 // calculated as: 5 + 2 + 2 * (7 - 1) + 3 + 2 * (6 + 3 * (-13 + 8) + 4)
 
 function productSum(array, depth = 1) {
+  // O(n) time | O(d) space - where n is the total number of e
+  // including sub-elements, and d is the greatest depth of "s
   let sum = 0;
   for (const value of array) {
     if (Array.isArray(value)) sum = sum + productSum(value, depth + 1);
@@ -60,7 +60,3 @@ function productSum(array, depth = 1) {
 }
 
 console.log(productSum([5, 2, [7, -1], 3, [6, [-13, 8], 4]]));
-
-//  ---- Second solution ---- :
-
-//  ---- Third solution ---- :
