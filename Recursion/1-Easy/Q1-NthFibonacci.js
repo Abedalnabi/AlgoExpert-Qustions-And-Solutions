@@ -13,7 +13,7 @@ F0 ; therefore, getNthFib(1) is equal to F0 , getNthFib(2) is equal to F1 , etc.
 
   ---- Sample output #1 ----
   
-  ===> 1 //0, 1
+  ===> 1 // 0, 1
 
   ---- Sample input #2 ----
   
@@ -21,7 +21,7 @@ F0 ; therefore, getNthFib(1) is equal to F0 , getNthFib(2) is equal to F1 , etc.
   
   ---- Sample output #2 ----
   
-  ===> 5 //0, 1, 1, 2, 3, 5
+  ===> 5 // 0, 1, 1, 2, 3, 5
 */
 /* ------------------------ Hints ------------------------
 
@@ -50,7 +50,12 @@ O(n) time | O(1) space - where n is the input number
 
 //  ---- First solution ---- :
 
-function getNthFib(n) {}
+function getNthFib(n) {
+  if (n === 2) return 1;
+  if (n === 1) return 0;
+
+  return getNthFib(n - 1) + getNthFib(n - 2);
+}
 
 //  ---- Second solution ---- :
 
