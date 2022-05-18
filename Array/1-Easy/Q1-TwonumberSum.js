@@ -1,4 +1,4 @@
-/* ------------------------ Question-1-Array-Essay ------------------------
+/* ------------------------ Question-1-Array-Easy ------------------------
 
   Write a function that takes in a non-empty array of distinct integers and an
   integer representing a target sum. If any two numbers in the input array sum

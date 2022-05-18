@@ -1,4 +1,4 @@
-/* ------------------------ Question-5-Array-Essay ------------------------
+/* ------------------------ Question-5-Array-Easy ------------------------
 
   Given an array of positive integers representing the values of coins in your
   possession, write a function that returns the minimum amount of change (the

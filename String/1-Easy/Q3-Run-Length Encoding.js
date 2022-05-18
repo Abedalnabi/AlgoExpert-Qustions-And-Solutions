@@ -1,4 +1,4 @@
-/* ------------------------ Question-3-String-Essay ------------------------
+/* ------------------------ Question-3-String-Easy ------------------------
 
   Write a function that takes in a non-empty string and returns its run-length
   encoding.

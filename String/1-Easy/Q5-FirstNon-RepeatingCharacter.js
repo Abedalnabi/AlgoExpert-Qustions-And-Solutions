@@ -1,4 +1,4 @@
-/* ------------------------ Question-5-String-Essay ------------------------
+/* ------------------------ Question-5-String-Easy ------------------------
 
 Write a function that takes in a string of lowercase Englishalphabet letters and returns the index of the string's first nonrepeating character.
 The first non-repeating character is the first character in a string

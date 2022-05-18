@@ -1,4 +1,4 @@
-/* ------------------------ Question-2-String-Essay ------------------------
+/* ------------------------ Question-2-String-Easy ------------------------
 
   Given a non-empty string of lowercase letters and a non-negative integer
   representing a key, write a function that returns a new string obtained by

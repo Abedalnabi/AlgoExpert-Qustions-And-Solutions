@@ -1,4 +1,4 @@
-/* ------------------------ Question-3-Array-Essay ------------------------
+/* ------------------------ Question-3-Array-Easy ------------------------
 
   Write a function that takes in a non-empty array of integers that are sorted
   in ascending order and returns a new array of the same length with the squares

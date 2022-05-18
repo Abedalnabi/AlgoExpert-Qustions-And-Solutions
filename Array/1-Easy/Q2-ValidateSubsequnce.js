@@ -1,4 +1,4 @@
-/* ------------------------ Question-2-Array-Essay ------------------------
+/* ------------------------ Question-2-Array-Easy ------------------------
 
   Given two non-empty arrays of integers, write a function that determines
   whether the second array is a subsequence of the first one.
@@ -59,6 +59,5 @@ function SecondIsValidSubsequence(array, sequence) {
     if (seqIdx === sequence.length) break;
     if (sequence[seqIndex] === value) seqIndex++;
   }
-
   return seqIndex === sequence.length;
 }
