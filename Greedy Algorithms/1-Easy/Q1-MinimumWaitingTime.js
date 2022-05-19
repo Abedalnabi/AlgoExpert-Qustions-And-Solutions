@@ -66,5 +66,16 @@ function firstMinimumWaitingTime(queries) {
   return sum;
 }
 
+function minimumWaitingTime(queries) {
+  queries.sort((a, b) => a - b);
+
+  let total = 0;
+  for (let i = 0; i < queries.length - 1; i++) {
+    const queriesTime = queries[i] * (queries.length - 1 - i);
+    total = total + queriesTime;
+  }
+  return total;
+}
+
 console.log(minimumWaitingTime([3, 2, 1, 2, 6]));
 // 1,2,2,3,6
