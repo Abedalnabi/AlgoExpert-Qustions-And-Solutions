@@ -66,7 +66,9 @@ function firstMinimumWaitingTime(queries) {
   return sum;
 }
 
-function minimumWaitingTime(queries) {
+//  ---- Second solution ---- :
+
+function secondMinimumWaitingTime(queries) {
   queries.sort((a, b) => a - b);
 
   let total = 0;
@@ -76,6 +78,3 @@ function minimumWaitingTime(queries) {
   }
   return total;
 }
-
-console.log(minimumWaitingTime([3, 2, 1, 2, 6]));
-// 1,2,2,3,6
