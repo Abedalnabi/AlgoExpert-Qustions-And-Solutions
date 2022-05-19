@@ -31,7 +31,7 @@ sorted.
 
 function bubbleSort(array) {
   for (let i = 0; i < array.length; i++) {
-    for (let x = 0; x < array.length; x++) {
+    for (let x = i; x < array.length; x++) {
       if (array[x] < array[i]) {
         let swap = array[i];
         array[i] = array[x];
