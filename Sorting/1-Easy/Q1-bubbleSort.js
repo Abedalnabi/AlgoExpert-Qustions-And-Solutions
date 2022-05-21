@@ -30,19 +30,26 @@ sorted.
 //  ---- First solution ---- :
 
 function bubbleSort(array) {
-  let thereIsASwap = false;
+  let thereIsSwap = true;
   let i = 0;
-  while (!thereIsASwap) {
+  while (thereIsSwap) {
+    thereIsSwap = false;
     for (let x = 1; x < array.length; x++) {
       if (array[x] < array[i]) {
         let swap = array[i];
-        array[x] = array[i];
+        array[i] = array[x];
         array[x] = swap;
-        i++;
+        thereIsSwap = true;
       }
       i++;
     }
+    if (thereIsSwap && i === array.length - 1) {
+      i = 0;
+      x = 1;
+      thereIsSwap = true;
+    }
   }
+  return array;
 
   // Not bubble Sort
   // for (let i = 0; i < array.length; i++) {
