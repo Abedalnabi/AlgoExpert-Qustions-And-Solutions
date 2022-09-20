@@ -56,7 +56,7 @@ function FirstIsValidSubsequence(array, sequence) {
 function SecondIsValidSubsequence(array, sequence) {
   let seqIndex = 0;
   for (const value of array) {
-    if (seqIdx === sequence.length) break;
+    if (seqIndex === sequence.length) break;
     if (sequence[seqIndex] === value) seqIndex++;
   }
   return seqIndex === sequence.length;
