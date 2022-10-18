@@ -74,7 +74,7 @@ function thirdMoveElementToEnd(array, toMove) {
 	let right = array.length - 1;
 	while (left < right) {
 		if (array[right] !== toMove) {
-			if (array[left] === toMove) swap(left, right, array);
+			if (array[left] === toMove) swap1(left, right, array);
 			left++;
 		} else {
 			right--;
@@ -82,7 +82,7 @@ function thirdMoveElementToEnd(array, toMove) {
 	}
 	return array;
 }
-function swap(left, right, array) {
+function swap1(left, right, array) {
 	const temp = array[left];
 	array[left] = array[right];
 	array[right] = temp;
