@@ -62,11 +62,6 @@ function moveElementToEnd(array, toMove) {
 	}
 	return array;
 }
-function swap(i, j, array) {
-	const temp = array[j];
-	array[j] = array[i];
-	array[i] = temp;
-}
 
 // best solution
 function thirdMoveElementToEnd(array, toMove) {
@@ -74,7 +69,7 @@ function thirdMoveElementToEnd(array, toMove) {
 	let right = array.length - 1;
 	while (left < right) {
 		if (array[right] !== toMove) {
-			if (array[left] === toMove) swap1(left, right, array);
+			if (array[left] === toMove) swap(left, right, array);
 			left++;
 		} else {
 			right--;
@@ -82,7 +77,22 @@ function thirdMoveElementToEnd(array, toMove) {
 	}
 	return array;
 }
-function swap1(left, right, array) {
+
+function forthMoveElementToEnd(array, toMove) {
+	let left = 0;
+	let right = array.length - 1;
+	while (left < right) {
+		if (array[right] === toMove) {
+			right--;
+			continue;
+		}
+		if (array[left] === toMove) swap(left, right, array);
+		left++;
+	}
+	return array;
+}
+
+function swap(left, right, array) {
 	const temp = array[left];
 	array[left] = array[right];
 	array[right] = temp;
