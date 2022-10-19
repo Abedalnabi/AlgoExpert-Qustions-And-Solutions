@@ -7,8 +7,8 @@ Write a JavaScript function to check whether an `input` is an array or not.
 */
 
 const isItArray = (input) => {
-  // YOUR CODE HERE
-}
+	return typeof input === 'object';
+};
 
 /*
 Examples:

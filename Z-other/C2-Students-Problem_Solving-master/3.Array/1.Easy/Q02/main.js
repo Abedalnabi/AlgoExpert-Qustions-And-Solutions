@@ -8,8 +8,14 @@ If the array has an even number of elements, return the average of the two middl
 */
 
 const ArrayCenter = (arr) => {
-  // YOUR CODE HERE
-}
+	const length = arr.length;
+	if (length % 2) return arr[Math.floor(length / 2)];
+
+	const firstItem = arr[length / 2];
+	const secondItem = arr[length / 2 - 1];
+
+	return (firstItem + secondItem) / 2;
+};
 
 /*
 Examples:

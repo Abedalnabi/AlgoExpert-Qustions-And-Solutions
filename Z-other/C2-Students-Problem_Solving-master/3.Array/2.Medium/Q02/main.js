@@ -7,8 +7,12 @@ Write a function that returns the number of unique items in an array.
 */
 
 const uniqueItems = (arr) => {
-  // YOUR CODE HERE
-}
+	let seen = new Set();
+	for (const value of arr) {
+		seen.add(value);
+	}
+	return seen.size;
+};
 
 /*
 Examples:

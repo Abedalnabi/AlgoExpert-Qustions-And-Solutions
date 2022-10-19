@@ -7,8 +7,10 @@ Find the first item which appear an even number of times in an array.
 */
 
 const evenAppearance = (arr) => {
-  // YOUR CODE HERE
-}
+	for (const value of arr) {
+		if (!(value % 2)) return value;
+	}
+};
 
 /*
 Examples:
