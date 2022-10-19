@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Problem Solving</title>
+</head>
+
+<body>
+    <h1>Problem Solving</h1>
+    <script>
+        const currentDirectory = window.location.pathname.split('/')
+        const pageTitle = currentDirectory[currentDirectory.length - 4] + " " + currentDirectory[currentDirectory.length - 3] + " " + currentDirectory[currentDirectory.length - 2]
+        document.title = pageTitle
+        const arrowTitle = '===> ' + pageTitle + ' <==='
+    </script>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
