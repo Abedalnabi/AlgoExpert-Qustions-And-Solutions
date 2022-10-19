@@ -84,4 +84,3 @@ function firstDuplicateValue_2(array) {
 	}
 	return -1;
 }
-console.log(firstDuplicateValue_2([4, 7, 9, 7, 1, 3, 2, 3, 1, 12, 12, 5]));
