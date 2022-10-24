@@ -57,7 +57,7 @@ function arrayOfProducts_2(array) {
 	const products = new Array(array.length).fill(1);
 	const leftProducts = new Array(array.length).fill(1);
 	const rightProducts = new Array(array.length).fill(1);
-  
+
 	let leftRunningProduct = 1;
 	for (let i = 0; i < array.length; i++) {
 		leftProducts[i] = leftRunningProduct;
@@ -92,6 +92,3 @@ function arrayOfProducts_3(array) {
 
 	return product;
 }
-
-
-console.log(arrayOfProducts([5, 1, 4, 2]));
