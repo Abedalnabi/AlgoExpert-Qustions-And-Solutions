@@ -38,8 +38,8 @@ O(n) time | O(n) space - where n is the length of the input array
 
 // O(n) time | O(1) space - where n is the length of the input array
 
-// first solution
-function arrayOfProducts1(array) {
+// First solution
+function arrayOfProducts_1(array) {
 	let product = new Array(array.length - 1).fill(1);
 	for (let i = 0; i < array.length; i++) {
 		let current = 1;
@@ -51,23 +51,47 @@ function arrayOfProducts1(array) {
 	}
 	return product;
 }
+// Second solution
+// O(n) time | O(n) space - where n is the length of the input array
+function arrayOfProducts_2(array) {
+	const products = new Array(array.length).fill(1);
+	const leftProducts = new Array(array.length).fill(1);
+	const rightProducts = new Array(array.length).fill(1);
+  
+	let leftRunningProduct = 1;
+	for (let i = 0; i < array.length; i++) {
+		leftProducts[i] = leftRunningProduct;
+		leftRunningProduct *= array[i];
+	}
+	let rightRunningProduct = 1;
+	for (let i = array.length - 1; i > -1; i--) {
+		rightProducts[i] = rightRunningProduct;
+		rightRunningProduct *= array[i];
+	}
+	for (let i = 0; i < array.length; i++) {
+		products[i] = leftProducts[i] * rightProducts[i];
+	}
+	return products;
+}
 
-function arrayOfProducts(array) {
+// Third solution
+function arrayOfProducts_3(array) {
 	let product = new Array(array.length).fill(1);
 
 	let rightToLeft = 1;
 	for (let i = 0; i < array.length; i++) {
 		product[i] = rightToLeft;
-		rightToLeft *= array[i];
+		rightToLeft = rightToLeft * array[i];
 	}
 
 	let leftTOright = 1;
 	for (let i = array.length - 1; i > -1; i--) {
-		product[i] *= leftTOright;
-		leftTOright *= array[i];
+		product[i] = product[i] * leftTOright;
+		leftTOright = leftTOright * array[i];
 	}
 
 	return product;
 }
+
 
 console.log(arrayOfProducts([5, 1, 4, 2]));
