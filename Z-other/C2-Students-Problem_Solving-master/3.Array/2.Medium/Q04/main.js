@@ -7,9 +7,12 @@ Make an array method that can return whether or not a context array is a part of
 To simplify the problem, you can assume that both arrays will contain only strings
 */
 
-Array.prototype.isPartOf = function (array)  {
-  // YOUR CODE HERE
-}
+Array.prototype.isPartOf = function (array) {
+	for (const ele of this) {
+		if (!array.includes(ele)) return false;
+	}
+	return true;
+};
 
 /*
 Examples:

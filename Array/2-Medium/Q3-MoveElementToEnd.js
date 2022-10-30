@@ -97,3 +97,5 @@ function swap(left, right, array) {
 	array[left] = array[right];
 	array[right] = temp;
 }
+
+console.log(forthMoveElementToEnd([1,2,2,6,4,9,10,3],2))

@@ -36,9 +36,21 @@ O(nlog(n)) time | O(n) space - where n is the length of the input array
 
   */
 
-function mergeOverlappingIntervals(array) {
-	// Write your code here.
-	return [[]];
+function mergeOverlappingIntervals_1(intervals) {
+	const sortedIntervals = intervals.sort((a, b) => a[0] - b[0]);
+	let start = sortedIntervals[0][0];
+	let end = sortedIntervals[0][1];
+	let array = [];
+	for (const ele of sortedIntervals) {
+		if (ele[0] >= start && ele[0] <= end) {
+			continue;
+		} else {
+			array.push([start, end]);
+			end = ele[1];
+			start = ele[0];
+		}
+	}
+	return array;
 }
 
 // O(nlog(n)) time | O(n) space - where n is the length of the input array
@@ -48,14 +60,25 @@ function mergeOverlappingIntervals(intervals) {
 	let currentInterval = sortedIntervals[0];
 	mergedIntervals.push(currentInterval);
 	for (const nextInterval of sortedIntervals) {
-	const [_, currentIntervalEnd] = currentInterval;
-	const [nextIntervalStart, nextIntervalEnd] = nextInterval;
-	if (currentIntervalEnd >= nextIntervalStart) currentInterval[1] = Math.max(currentIntervalEnd, nextIntervalEnd);
-	else {
-	currentInterval = nextInterval;
-	mergedIntervals.push(currentInterval);
-	}
+		const [_, currentIntervalEnd] = currentInterval;
+		const [nextIntervalStart, nextIntervalEnd] = nextInterval;
+		if (currentIntervalEnd >= nextIntervalStart)
+			currentInterval[1] = Math.max(currentIntervalEnd, nextIntervalEnd);
+		else {
+			currentInterval = nextInterval;
+			mergedIntervals.push(currentInterval);
+		}
 	}
 	return mergedIntervals;
-   }
-   
+}
+
+console.log(
+	mergeOverlappingIntervals([
+		[1, 2],
+		[3, 5],
+		[4, 7],
+		[6, 8],
+		[9, 10],
+	])
+);
+//[([1, 2], [3, 8], [9, 10])];

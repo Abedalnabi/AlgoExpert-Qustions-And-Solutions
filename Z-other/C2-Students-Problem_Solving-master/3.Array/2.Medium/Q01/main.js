@@ -11,10 +11,22 @@ string containing the numbers that occur in elements of strArr in sorted order. 
 return the string false.
 */
 
-const findIntersection = (strArr) => {
-	// YOUR CODE HERE
-};
+function findIntersection(strArr) {
 
+	// use Set 
+	// then for loop on second one
+	let arrN1 = strArr[0].split(', ');
+	let arrN2 = strArr[1].split(', ');
+	let matchArr = [];
+
+	arrN2.forEach(function (e) {
+		if (arrN1.includes(e)) {
+			matchArr.push(e);
+		}
+	});
+
+	return matchArr.length ? matchArr.join(',') : false;
+}
 /*
 Examples:
 findIntersection(['1, 3, 4, 7, 13', '1, 2, 4, 13, 15']); // => '1,4,13'
