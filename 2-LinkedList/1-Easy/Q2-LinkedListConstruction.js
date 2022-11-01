@@ -80,7 +80,12 @@ class DoublyLinkedList {
 	}
 
 	insertBefore(node, nodeToInsert) {
-		// Write your code here.
+		// serch node
+		// when find curr.pre = nodeToInsert
+		// nodeToInsert.next = curr
+		// nodeToInsert.pre = curr.pre.pre
+		// nodeToInsert.pre = curr.pre.pre
+
 	}
 
 	insertAfter(node, nodeToInsert) {
