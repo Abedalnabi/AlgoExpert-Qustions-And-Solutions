@@ -7,15 +7,14 @@ Write a function returns the length of the longest sequence of 1s in an array of
 */
 
 const longestSequence = (arr) => {
-	// let longest = 0;
-	// let currentLongest = 0;
-	// for (const value of arr) {
-	// 	if (currentLongest > longest) longest = currentLongest;
-	// 	if (value === 0) currentLongest = 0;
-
-	// 	if (value === 1) currentLongest++;
-	// }
-	// return longest;
+	let longest = 0;
+	let currentLongest = 0;
+	for (const value of arr) {
+		if (currentLongest > longest) longest = currentLongest;
+		if (!value) currentLongest = 0;
+		if (value) currentLongest++;
+	}
+	return Math.max(currentLongest, longest);
 };
 
 /*

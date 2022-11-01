@@ -4,7 +4,7 @@ function longestPeak(array) {
 	// tow pointer
 	// n , n + 1
 	// if n + 1 < n then peek = n
-	// if (n+1 > n) retun the peek
+	// if (n+1 > n) return the peek
 }
 
 /* ------------------------ Question-6-Array-med ------------------------
