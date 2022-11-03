@@ -93,6 +93,11 @@ class DoublyLinkedList {
 	}
 	// O(1) time | O(1) space
 	insertBefore(node, nodeToInsert) {
+		// if one node return
+		// remove the node why ? because if i found to
+		// if i will push before head i need to set current node to head and modify the last head to node.pre = current node
+		// if not node.pre.next = current
+
 		if (nodeToInsert === this.head && nodeToInsert === this.tail) return;
 		this.remove(nodeToInsert);
 		nodeToInsert.prev = node.prev;
