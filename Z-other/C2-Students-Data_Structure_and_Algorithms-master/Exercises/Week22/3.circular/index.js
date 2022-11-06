@@ -12,6 +12,13 @@
 //   c.next = b;
 //   circular(l) // true
 
-const circular =(list)=> {}
+const circular =(list)=> {
+    /**
+     * two pointer fast one
+     * slow one
+     * if(fast.next !== null ) return false
+     * if(fast.next == slow) return true
+     */
+}
 
 module.exports = circular;
