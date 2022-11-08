@@ -30,38 +30,24 @@ sorted.
 //  ---- First solution ---- :
 
 function bubbleSort(array) {
-  let thereIsSwap = true;
-  let i = 0;
-  while (thereIsSwap) {
-    thereIsSwap = false;
-    for (let x = 1; x < array.length; x++) {
-      if (array[x] < array[i]) {
-        let swap = array[i];
-        array[i] = array[x];
-        array[x] = swap;
-        thereIsSwap = true;
-      }
-      i++;
-    }
-    if (thereIsSwap && i === array.length - 1) {
-      i = 0;
-      x = 1;
-      thereIsSwap = true;
-    }
-  }
-  return array;
-
-  // Not bubble Sort
-  // for (let i = 0; i < array.length; i++) {
-  //   for (let x = i; x < array.length; x++) {
-  //     if (array[x] < array[i]) {
-  //       let swap = array[i];
-  //       array[i] = array[x];
-  //       array[x] = swap;
-  //     }
-  //   }
-  // }
-  // return array;
+	let isThereASwap = true;
+	let counter = 0;
+	while (isThereASwap) {
+		isThereASwap = false;
+		for (let i = 0; i < array.length - 1 - counter; i++) {
+			if (array[i] > array[i + 1]) {
+				isThereASwap = true;
+				swap(array, i, i + 1);
+			}
+		}
+		counter++;
+	}
+	console.log('array', array);
+	return array;
 }
 
-//  ---- Second solution ---- :
+function swap(array, i, x) {
+	let swap = array[i];
+	array[i] = array[x];
+	array[x] = swap;
+}
