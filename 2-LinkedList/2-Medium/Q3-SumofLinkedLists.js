@@ -86,3 +86,29 @@ function sumOfLinkedLists(linkedListOne, linkedListTwo) {
 	}
 	return newLinkedListHeadPointer.next;
 }
+
+// second solution
+function getListValue(head) {
+	let place = 1;
+	let cur = head;
+	let num = 0;
+	while (cur) {
+		num += cur.value * place;
+		place *= 10;
+		cur = cur.next;
+	}
+	return num;
+}
+function sumOfLinkedLists_2(linkedListOne, linkedListTwo) {
+	let numOne = getListValue(linkedListOne);
+	let numTwo = getListValue(linkedListTwo);
+	let sumIntegers = [...(numOne + numTwo).toString()];
+	let newList = new LinkedList(+sumIntegers.pop());
+	let cur = newList;
+	while (sumIntegers.length) {
+		let next = new LinkedList(+sumIntegers.pop());
+		cur.next = next;
+		cur = next;
+	}
+	return newList;
+}
