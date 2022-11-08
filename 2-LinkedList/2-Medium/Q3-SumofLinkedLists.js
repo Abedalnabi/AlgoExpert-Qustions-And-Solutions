@@ -112,3 +112,21 @@ function sumOfLinkedLists_2(linkedListOne, linkedListTwo) {
 	}
 	return newList;
 }
+
+/**
+ * new list
+ * current list
+ * curry 0
+ * nodeOne
+ * nodeTow
+ * while node one node tow carry
+ * valueNode one
+ * valueNode tow 
+ * sum two node + curry 
+ * create new node with firstOne value
+ * set current.next = new one
+ * current = newOne
+ * get the curry value
+ * nodeOne.next
+ * nodeOne.next
+ */
