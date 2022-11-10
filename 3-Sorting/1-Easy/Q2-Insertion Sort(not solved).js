@@ -29,26 +29,7 @@ Best: O(n) time | O(1) space - where n is the length of the input array Average:
 //  ---- First solution ---- :
 
 function insertionSort(array) {
-	for (let i = 0; i < array.length; i++) {
-		let smallestIdx = i;
-		let smallestValue = array[i];
-		for (let x = i + 1; x < array.length; x++) {
-			let currentValue = array[x];
-			if (currentValue < smallestValue) {
-				smallestIdx = x;
-				smallestValue = currentValue;
-			}
-		}
-		swap(array, smallestIdx, i);
-	}
-	console.log(array)
-	return array;
-}
 
-function swap(array, i, x) {
-	let swap = array[i];
-	array[i] = array[x];
-	array[x] = swap;
 }
 
 insertionSort([8, 5, 2, 9, 5, 6, 3]);
