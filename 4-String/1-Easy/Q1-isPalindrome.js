@@ -34,36 +34,39 @@ at the first index of the string and a pointer at the final index of the string.
 //  ---- First solution ---- :
 
 function FirstIsPalindrome(string) {
-  let str = "";
-  for (let i = string.length - 1; i >= 0; i--) {
-    str += string[i];
-  }
-  return str === string;
+	// or split string to array to avoid string time complexity when add nex chr to the string
+	// str += 'chr' ==> o(n)
+	// arr += 'chr ===> o(1)
+	let str = '';
+	for (let i = string.length - 1; i >= 0; i--) {
+		str += string[i];
+	}
+	return str === string;
 }
 
 //  ---- Second solution ---- :
 
 function secondIsPalindrome(string, i = 0) {
-  let lastChar = string.length - 1 - i;
-  if (i >= lastChar) {
-    return true;
-  }
+	let lastChar = string.length - 1 - i;
+	if (i >= lastChar) {
+		return true;
+	}
 
-  return string[i] === string[lastChar] && secondIsPalindrome(string, i + 1);
+	return string[i] === string[lastChar] && secondIsPalindrome(string, i + 1);
 }
 
 //  ---- Third solution ---- :
 
 function thirdIsPalindrome(string) {
-  let begin = 0;
-  let last = string.length - 1;
-  // Or using Variable ==> let boolean = true;
-  while (last > begin) {
-    if (string[last] !== string[begin]) return false;
-    // boolean = true;
-    begin++;
-    last--;
-  }
-  return true;
-  // return boolean;
+	let begin = 0;
+	let last = string.length - 1;
+	// Or using Variable ==> let boolean = true;
+	while (last > begin) {
+		if (string[last] !== string[begin]) return false;
+		// boolean = true;
+		begin++;
+		last--;
+	}
+	return true;
+	// return boolean;
 }
