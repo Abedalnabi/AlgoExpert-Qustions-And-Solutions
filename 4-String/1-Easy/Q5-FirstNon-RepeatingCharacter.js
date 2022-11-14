@@ -1,6 +1,7 @@
 /* ------------------------ Question-5-String-Easy ------------------------
 
-Write a function that takes in a string of lowercase Englishalphabet letters and returns the index of the string's first nonrepeating character.
+Write a function that takes in a string of lowercase English alphabet letters and returns the index of the string's first
+non repeating character.
 The first non-repeating character is the first character in a string
 that occurs only once.
 If the input string doesn't have any non-repeating characters,
@@ -45,28 +46,28 @@ has lowercase English-alphabet letters; thus, our hash table will never have mor
 
 //  ---- First solution ---- :
 function firstFirstNonRepeatingCharacter(string) {
-  for (let i = 0; i < string.length; i++) {
-    let notUniqueChar = false;
-    for (let x = 0; x < string.length; x++) {
-      if (string[i] === string[x] && i != x) notUniqueChar = true;
-    }
-    if (!notUniqueChar) return i;
-  }
-  return -1;
+	for (let i = 0; i < string.length; i++) {
+		let notUniqueChar = false;
+		for (let x = 0; x < string.length; x++) {
+			if (string[i] === string[x] && i != x) notUniqueChar = true;
+		}
+		if (!notUniqueChar) return i;
+	}
+	return -1;
 }
 
 //  ---- Second solution ---- :
 function secondFirstNonRepeatingCharacter(string) {
-  const charactersCount = {};
+	const charactersCount = {};
 
-  for (const char of string) {
-    if (!charactersCount[char]) charactersCount[char] = 1;
-    else charactersCount[char]++;
-  }
-  let index = 0;
-  for (const char of string) {
-    if (charactersCount[char] === 1) return index;
-    index++;
-  }
-  return -1;
+	for (const char of string) {
+		if (!charactersCount[char]) charactersCount[char] = 1;
+		else charactersCount[char]++;
+	}
+	let index = 0;
+	for (const char of string) {
+		if (charactersCount[char] === 1) return index;
+		index++;
+	}
+	return -1;
 }
