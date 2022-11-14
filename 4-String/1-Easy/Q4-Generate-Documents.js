@@ -53,71 +53,71 @@ then you can generate the document.
 //  ---- First solution ---- :
 
 function firstGenerateDocument(characters, document) {
-  let chr = characters.split("");
-  let flag = true;
-  for (let i = 0; i < document.length; i++) {
-    let index = chr.indexOf(document[i]);
-    if (index >= 0) {
-      chr.splice(index, 1);
-    } else {
-      flag = false;
-    }
-  }
-  return flag;
+	let chr = characters.split('');
+	let flag = true;
+	for (let i = 0; i < document.length; i++) {
+		let index = chr.indexOf(document[i]);
+		if (index >= 0) {
+			chr.splice(index, 1);
+		} else {
+			flag = false;
+		}
+	}
+	return flag;
 }
 
 //  ---- Second solution ---- :
 
 function secondGenerateDocument(characters, document) {
-  for (const value of document) {
-    let charactersCounter = countChar(value, characters);
-    let documentCounter = countChar(value, document);
+	for (const value of document) {
+		let charactersCounter = countChar(value, characters);
+		let documentCounter = countChar(value, document);
 
-    if (documentCounter > charactersCounter) return false;
-  }
-  return true;
+		if (documentCounter > charactersCounter) return false;
+	}
+	return true;
 }
 function countChar(character, target) {
-  let countOfChar = 0;
-  for (const value of target) {
-    if (value === character) countOfChar++;
-  }
-  return countOfChar;
+	let countOfChar = 0;
+	for (const value of target) {
+		if (value === character) countOfChar++;
+	}
+	return countOfChar;
 }
 
 //  ---- third solution ---- :
 
 function thirdGenerateDocument(characters, document) {
-  // const alreadyCounted = {}
-  const alreadyCounted = new Set();
-  for (const char of document) {
-    if (char in alreadyCounted) continue;
-    // if( alreadyCounted.has(char)) continue;
+	// const alreadyCounted = {}
+	const alreadyCounted = new Set();
+	for (const char of document) {
+		if (char in alreadyCounted) continue;
+		// if( alreadyCounted.has(char)) continue;
 
-    // -- countChar function from second solution -- //
-    const charactersCounter = countChar(char, characters);
-    const documentCounter = countChar(char, document);
+		// -- countChar function from second solution -- //
+		const charactersCounter = countChar(char, characters);
+		const documentCounter = countChar(char, document);
 
-    if (documentCounter > charactersCounter) return false;
+		if (documentCounter > charactersCounter) return false;
 
-    alreadyCounted.add(char);
-    // alreadyCounted[char] = alreadyCounted[char]
-  }
-  return true;
+		alreadyCounted.add(char);
+		// alreadyCounted[char] = alreadyCounted[char]
+	}
+	return true;
 }
 
 //  ---- Forth solution ---- :
 
 function forthGenerateDocument(characters, document) {
-  const characterCounts = {};
+	const characterCounts = {};
 
-  for (const char of characters)
-    if (characterCounts[char]) characterCounts[char]++;
-    else characterCounts[char] = 1;
+	for (const char of characters)
+		if (characterCounts[char]) characterCounts[char]++;
+		else characterCounts[char] = 1;
 
-  for (const char of document) {
-    if (!characterCounts[char] || characterCounts[char === 0]) return false;
-    characterCounts[char]--;
-  }
-  return true;
+	for (const char of document) {
+		if (!characterCounts[char] || characterCounts[char === 0]) return false;
+		characterCounts[char]--;
+	}
+	return true;
 }

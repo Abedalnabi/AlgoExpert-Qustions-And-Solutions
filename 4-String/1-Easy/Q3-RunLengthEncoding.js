@@ -33,8 +33,8 @@ Traverse the input string and count the length of each run. As you traverse the 
 what should you do when you reach a run of length 9 or the end of a run?
 
   -- Hint 2 
-When you reach a run of length 9 or the end of a run, store the computed count for the run
-as well as its character (you'll likely need a list for these computed counts and characters), 
+When you reach a run of length 9 or the end of a run, store the computed count for the run 
+as well as its character (you'll likely need a list for these computed counts and characters),  
 and reset the count to 1 before continuing to traverse the string.
 
   -- Hint 3 
@@ -44,17 +44,17 @@ Make sure that your solution correctly handles the last run in the string.
 
 //  ---- First solution ---- :
 function runLengthEncoding(string) {
-  let result = [];
-  let counter = 1;
-  for (let i = 1; i < string.length; i++) {
-    const currentChr = string[i];
-    const preChr = string[i - 1];
-    if (currentChr !== preChr || counter === 9) {
-      result.push(counter, preChr);
-      counter = 0;
-    }
-    counter++;
-  }
-  result.push(counter, string[string.length - 1]);
-  return result.join("");
+	let result = [];
+	let counter = 1;
+	for (let i = 1; i < string.length; i++) {
+		const currentChr = string[i];
+		const preChr = string[i - 1];
+		if (currentChr !== preChr || counter === 9) {
+			result.push(counter, preChr);
+			counter = 0;
+		}
+		counter++;
+	}
+	result.push(counter, string[string.length - 1]);
+	return result.join('');
 }

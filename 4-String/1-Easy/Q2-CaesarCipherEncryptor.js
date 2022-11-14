@@ -38,11 +38,47 @@ operator should be your friend here.
 
 //  ---- First solution ---- :
 
-function FirstCaesarCipherEncryptor(string, key) {
-  const newLetter = [];
-  const newKey = k % 26;
+function caesarCipherEncryptor(string, key) {
+	const newLetters = [];
+	const newKey = key % 26;
+	const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+
+	for (const letter of string) {
+		const newLetter = getLetter(letter, alphabet, newKey);
+		newLetters.push(newLetter);
+	}
+	return newLetters.join('');
+}
+function getLetter(letter, array, key) {
+	const letterIdx = array.indexOf(letter) + key;
+
+	return array[letterIdx % 26];
 }
 
 //  ---- Second solution ---- :
-
+// O(n) time | O(n) space
+function caesarCipherEncryptor(string, key) {
+	const newLetters = [];
+	const newKey = key % 26;
+	for (const letter of string) {
+		newLetters.push(getNewLetter(letter, newKey));
+	}
+	return newLetters.join('');
+}
+function getNewLetter(letter, key) {
+	const newLetterCode = letter.charCodeAt() + key;
+	return newLetterCode <= 122
+		? String.fromCharCode(newLetterCode)
+		: String.fromCharCode(96 + (newLetterCode % 122));
+}
 //  ---- Third solution ---- :
+
+function caesarCipherEncryptor(string, key) {
+	return string
+		.split('')
+		.map((_, i) => {
+			const asciCode = string.charCodeAt(i) + (key % 26);
+			return String.fromCharCode(asciCode > 122 ? asciCode - 26 : asciCode);
+		})
+		.join('');
+}
