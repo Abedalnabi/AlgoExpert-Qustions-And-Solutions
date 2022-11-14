@@ -85,38 +85,18 @@ function countChar(character, target) {
 	return countOfChar;
 }
 
-//  ---- third solution ---- :
-
-function thirdGenerateDocument(characters, document) {
-	// const alreadyCounted = {}
-	const alreadyCounted = new Set();
-	for (const char of document) {
-		if (char in alreadyCounted) continue;
-		// if( alreadyCounted.has(char)) continue;
-
-		// -- countChar function from second solution -- //
-		const charactersCounter = countChar(char, characters);
-		const documentCounter = countChar(char, document);
-
-		if (documentCounter > charactersCounter) return false;
-
-		alreadyCounted.add(char);
-		// alreadyCounted[char] = alreadyCounted[char]
-	}
-	return true;
-}
-
-//  ---- Forth solution ---- :
+//  ---- Third solution ---- :
 
 function forthGenerateDocument(characters, document) {
 	const characterCounts = {};
 
-	for (const char of characters)
+	for (const char of characters) {
 		if (characterCounts[char]) characterCounts[char]++;
 		else characterCounts[char] = 1;
+	}
 
 	for (const char of document) {
-		if (!characterCounts[char] || characterCounts[char === 0]) return false;
+		if (!characterCounts[char] || characterCounts[char] === 0) return false;
 		characterCounts[char]--;
 	}
 	return true;
