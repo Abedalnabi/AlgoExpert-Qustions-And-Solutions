@@ -10,6 +10,7 @@
   ---- Sample input ----
   
   string = "xyz"
+  key = 2
   
   ---- Sample output ----
   
